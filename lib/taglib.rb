@@ -46,8 +46,8 @@ rescue
 		dlload 'libtag_c.dylib'
 	rescue
     begin
-      dlload (Rails.root + 'vendor/plugins/ruby-taglib-1.1/lib/libtag.so.1').to_s
-      dlload (Rails.root + 'vendor/plugins/ruby-taglib-1.1/lib/libtag_c.so').to_s
+      dlload 'libtag.so.1'
+      dlload 'libtag_c.so'
     rescue
 		  raise 'libtag_c not found or uses a filename not looked for.'
     end
