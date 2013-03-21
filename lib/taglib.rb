@@ -46,8 +46,8 @@ rescue
 		dlload 'libtag_c.dylib'
 	rescue
     begin
-      dlload 'libtag.so.1'
-      dlload 'libtag_c.so'
+      dlload(File.dirname(__FILE__) + 'libtag.so.1').to_s
+      dlload(File.dirname(__FILE__) + 'libtag_c.so').to_s
     rescue
 		  raise 'libtag_c not found or uses a filename not looked for.'
     end
